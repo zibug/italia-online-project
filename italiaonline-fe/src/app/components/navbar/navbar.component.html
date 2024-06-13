@@ -1,0 +1,6 @@
+<p>
+    <mat-toolbar>
+        <span style="border-right: 1px solid black;">Italia Online Project</span>
+        <span *ngFor="let tab of routes" (click)="navigateTo(tab.path)" class="label-route">{{tab.label}}</span>
+    </mat-toolbar>
+</p>

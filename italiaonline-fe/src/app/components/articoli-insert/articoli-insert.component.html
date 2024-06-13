@@ -1,0 +1,29 @@
+<div class="articolo-insert-form-container">
+    <h2>Inserimento Articolo</h2>
+    <form #formArticolo="ngForm" (ngSubmit)="onSubmit(formArticolo)">
+        <mat-form-field>
+            <mat-label>Titolo</mat-label>
+            <input matInput [(ngModel)]="daAggiungere.title" name="title" required>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label>Url</mat-label>
+            <input matInput [(ngModel)]="daAggiungere.url" name="url" required>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="daAggiungere.publishDate" name="publishDate" required>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <mat-label>Tipologia articolo</mat-label>
+            <input matInput [(ngModel)]="daAggiungere.type" name="type" required>
+        </mat-form-field>
+        <br/>
+        <button type="submit" mat-raised-button [disabled]="!formArticolo.valid">Inserisci</button>
+    </form>
+</div>
