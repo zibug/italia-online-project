@@ -1,0 +1,17 @@
+version: "1"
+services:
+  mongoitalia:
+    image: mongo:latest
+    container_name: "mongoitalia"
+    ports:
+      - 27017:27017
+  italiabeproject:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: italiabeproject:latest
+    container_name: "italia-beproject"
+    ports:
+      - 8080:8080
+    links:
+      - mongoitalia

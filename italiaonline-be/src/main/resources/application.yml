@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: testdb
+      host: mongoitalia
+      port: 27017
