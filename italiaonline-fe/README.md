@@ -12,4 +12,4 @@ Run `ng serve`. Navigate to `http://localhost:4200/`. The application will autom
 
 ## Start on docker
 
-Run `docker-compose up --build`.Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `docker-compose up --build`.Navigate to `http://localhost:4200/`.
