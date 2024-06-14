@@ -1,4 +1,12 @@
 <div class="articoli-container">
     <h2>Dati MongoDB</h2>
+    <form #formFilter="ngForm" (ngSubmit)="filter(formFilter)">
+        <mat-form-field>
+            <mat-label>Filtro Titolo</mat-label>
+            <input matInput [(ngModel)]="filtro" name="filtro">
+        </mat-form-field>
+        <button type="submit" mat-raised-button>Filtra</button>
+        <button *ngIf="filtro != ''" (click)="cancellaFiltro()" mat-flat-button>Cancella Filtro</button>
+    </form>
     <app-articoli-table [listaArticoli]="listaArticoli"></app-articoli-table>
 </div>

@@ -9,5 +9,5 @@ import { ArticoloModel } from '../../model/Articolo.model';
 export class ArticoliTableComponent {
   imgPath: string = '../../../assets/loading.gif';
   displayedColumns: string[] = ['title', 'url', 'publishDate', 'source'];
-  @Input() listaArticoli: ArticoloModel[] = [];
+  @Input() listaArticoli: ArticoloModel[] | null = null;
 }

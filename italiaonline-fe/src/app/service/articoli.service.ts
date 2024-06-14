@@ -23,4 +23,8 @@ export class ArticoliService {
   public saveNews(articolo: ArticoloModel): Observable<ArticoloModel> {
     return this.httpClient.post<ArticoloModel>(`${this.url}save`, articolo);
   }
+
+  public filtra(filtro: string): Observable<ArticoloModel[]> {
+    return this.httpClient.get<ArticoloModel[]>(`${this.url}list/${filtro}`);
+  }
 }

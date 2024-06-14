@@ -11,7 +11,7 @@ import { SnackBarComponent } from '../../common/snack-bar/snack-bar.component';
 })
 export class ArticoliContainerComponent {
 
-  listaArticoli: ArticoloModel[] = [];
+  listaArticoli: ArticoloModel[] | null = null;
 
   constructor(private articoloService: ArticoliService, private _snackBar: MatSnackBar) {
     articoloService.getNews().subscribe(response => {
