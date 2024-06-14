@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ArticoliService {
@@ -65,6 +66,17 @@ public class ArticoliService {
         List<Articolo> articoli = null;
         try {
             articoli = repository.findAll();
+            logger.info("size articoli" + articoli.size());
+            return articoli;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Articolo> filtra(String word) {
+        List<Articolo> articoli = null;
+        try {
+            articoli = repository.findAll().stream().filter(el -> el.getTitle().toLowerCase().contains(word.toLowerCase())).collect(Collectors.toList());
             logger.info("size articoli" + articoli.size());
             return articoli;
         } catch (Exception e) {

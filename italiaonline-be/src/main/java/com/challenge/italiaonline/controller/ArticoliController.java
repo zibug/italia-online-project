@@ -65,4 +65,16 @@ public class ArticoliController {
         }
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @GetMapping("/list/{word}")
+    public ResponseEntity<List<Articolo>> filtra(@PathVariable("word") String word) {
+        List<Articolo> response = null;
+        try {
+            response = service.filtra(word);
+        } catch (Exception e) {
+            logger.error(e);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }
