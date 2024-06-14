@@ -25,6 +25,7 @@ export class ArticoliInsertComponent {
     this.articoliService.saveNews(form.value).subscribe((response) => {
       
       this.openSnackBar("Salvataggio avvenuto con successo");
+      form.resetForm();
     }, error => {
       this.openSnackBar();
       console.log(error);
